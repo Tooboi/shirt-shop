@@ -36,7 +36,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="bg-primary-500 text-primary-200 h-screen">
+        <div className="m-0 p-0 bg-primary-500 text-primary-200 h-full bg-cover">
           <StoreProvider>
             <Nav />
             <Routes>

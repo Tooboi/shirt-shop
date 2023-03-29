@@ -17,13 +17,13 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Nude Couple Tee',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
+      image: 'shirtF.jpg',
       category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+      price: 25,
+      quantity: 1
     },
     {
       name: 'Canned Coffee',
@@ -90,7 +90,7 @@ db.once('open', async () => {
     },
     {
       name: 'Spinning Top',
-      category: categories[4]._id,
+      category: categories[3]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
       image: 'spinning-top.jpg',
       price: 1.99,
@@ -98,7 +98,7 @@ db.once('open', async () => {
     },
     {
       name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      category: categories[3]._id,
       description:
         'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
       image: 'plastic-horses.jpg',
@@ -107,7 +107,7 @@ db.once('open', async () => {
     },
     {
       name: 'Teddy Bear',
-      category: categories[4]._id,
+      category: categories[3]._id,
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
       image: 'teddy-bear.jpg',
@@ -116,7 +116,7 @@ db.once('open', async () => {
     },
     {
       name: 'Alphabet Blocks',
-      category: categories[4]._id,
+      category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
       image: 'alphabet-blocks.jpg',
@@ -134,6 +134,7 @@ db.once('open', async () => {
     lastName: 'Washington',
     email: 'pamela@testmail.com',
     password: 'password12345',
+    admin: false,
     orders: [
       {
         products: [products[0]._id, products[0]._id, products[1]._id]
@@ -142,10 +143,19 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    firstName: 'Taylor',
+    lastName: 'Silliman',
+    email: 'tsilliman123@gmail.com',
+    password: 'SuperSilly420',
+    admin: true
+  });
+
+  await User.create({
+    firstName: 'Josh',
+    lastName: 'Pica',
+    email: 'japica123@gmail.com',
+    password: 'Mohawk710',
+    admin: true
   });
 
   console.log('users seeded');
