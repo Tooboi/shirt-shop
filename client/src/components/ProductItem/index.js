@@ -40,9 +40,13 @@ function ProductItem(item) {
           <img alt={name} src={`/images/${image}`} className="h-full w-full object-cover object-center lg:h-full lg:w-full border-b-2 border-primary-900" />
         </Link>
       </div>
-      <p className='p-2 pb-3 text-xl font-semibold border-b-2 border-primary-900 '>{name}</p>
-      <div className="h-8">
-        <span>${price}</span>
+      <div className='flex flex-row divide-x-2 divide-primary-900 border-b-2 border-primary-900'>
+        <p className="w-10/12 p-2 pb-3 text-xl font-semibold text-primary-100">{name}</p>
+        <p className='w-2/12 text-xl font-semibold text-primary-100 p-2 text-center'>${price}</p>
+      </div>
+
+      <div>
+        
       </div>
       <div>
         {quantity} {pluralize('item', quantity)} in stock
