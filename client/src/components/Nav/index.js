@@ -21,9 +21,9 @@ function Nav() {
   } else {
     return (
       <div>
-      <Logo />
-        <ul className="flex-row">
-          <li className="mx-1">
+      <Logo className="p-4" />
+        <ul className="flex-row flex justify-center">
+          <li className="">
             <Link to="/login">Login</Link>
           </li>
         </ul>
