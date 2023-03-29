@@ -1,52 +1,35 @@
-import React from "react";
-import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
+import {ReactComponent as Logo} from '../../assets/logoLarge.svg';
 
 function Nav() {
-
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
+  if (Auth.loggedIn()) {
+    return (
+      <ul className="flex-row">
+        <li className="mx-1">
+          <Link to="/orderHistory">Order History</Link>
+        </li>
+        <li className="mx-1">
+          {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+          <a href="/" onClick={() => Auth.logout()}>
+            Logout
+          </a>
+        </li>
+      </ul>
+    );
+  } else {
+    return (
+      <div>
+      <Logo />
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
-          </li>
-        </ul>
-      );
-    }
-  }
-
-  return (
-    <header className="flex flex-row ">
-      <div className="h-16 px-1">
-        <Link to="/">
-          <h1 className="text-2xl text-primary-500">tailored</h1>
-        </Link>
       </div>
-
-      <nav>
-        {showNavigation()}
-      </nav>
-    </header>
-  );
+    );
+  }
 }
 
 export default Nav;
