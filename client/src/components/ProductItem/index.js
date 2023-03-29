@@ -34,18 +34,18 @@ function ProductItem(item) {
   };
 
   return (
-    <div className="card p-4">
-      <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md  group-hover:opacity-75 lg:aspect-none lg:h-80 drop-shadow-lg">
+    <div className="m-4 flex flex-col border-2 border-primary-900 overflow-hidden rounded-md drop-shadow-lg bg-primary-200/30">
+      <div className="min-h-80 aspect-w-1 aspect-h-1 w-full group-hover:opacity-75 lg:aspect-none lg:h-80 rounded-t-sm overflow-hidden">
         <Link to={`/products/${_id}`}>
-          <img alt={name} src={`/images/${image}`} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
-          <p>{name}</p>
+          <img alt={name} src={`/images/${image}`} className="h-full w-full object-cover object-center lg:h-full lg:w-full border-b-2 border-primary-900" />
         </Link>
       </div>
-      <div>
-        <div>
-          {quantity} {pluralize('item', quantity)} in stock
-        </div>
+      <p className='p-2 pb-3 text-xl font-semibold border-b-2 border-primary-900 '>{name}</p>
+      <div className="h-8">
         <span>${price}</span>
+      </div>
+      <div>
+        {quantity} {pluralize('item', quantity)} in stock
       </div>
       <button onClick={addToCart}>Add to cart</button>
     </div>
