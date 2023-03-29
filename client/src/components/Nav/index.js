@@ -38,7 +38,7 @@ function Nav() {
     <header className="flex flex-row ">
       <div className="h-16 px-1">
         <Link to="/">
-          <h1 className="logo-font text-violet-800">tailored</h1>
+          <h1 className="text-2xl text-primary-500">tailored</h1>
         </Link>
       </div>
 
