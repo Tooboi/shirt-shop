@@ -43,10 +43,10 @@ function ProductItem(item) {
         </Link>
       </div>
       <div className="flex flex-row divide-x-2 divide-primary-900 border-b-2 border-primary-900">
-        <p className="w-10/12 p-2 pb-3 text-xl font-semibold text-primary-100">{name}</p>
+        <p className="w-10/12 p-2 pb-2 text-xl font-semibold text-primary-100">{name}</p>
         <p className="w-2/12 text-xl font-semibold text-primary-100 p-2 text-center">${price}</p>
       </div>
-      <p className="p-2 text-primary-100/80">{description}</p>
+      <p className="p-2 text-primary-100/80 font-light">{description}</p>
       <div className='flex flex-row justify-between '>
         <p className="p-2 font-regular text-primary-100">
           {quantity} in stock

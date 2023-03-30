@@ -3,7 +3,7 @@ import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/logoLarge.svg';
-import Cart from '../Cart'
+import Cart from '../../pages/Cart.jsx'
 
 function Nav() {
   if (Auth.loggedIn()) {
@@ -24,8 +24,8 @@ function Nav() {
     return (
       <div>
         <Logo className="p-5" />
-        <div className="flex-row flex justify-end pb-4 px-4">
-          {/* <Link to="/login" className='bg-primary-100/40 px-2 p-px rounded-md text-primary-900 border border-primary-900'>Login</Link> */}
+        <div className="flex-row flex justify-end py-2 px-4 border-t-2 border-primary-900 bg-primary-200/20">
+          <Link to="/login" className='bg-primary-100/40 px-2 p-px rounded-md text-primary-900 border border-primary-900'>Login</Link>
           <Cart />
         </div>
       </div>

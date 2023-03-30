@@ -1,6 +1,5 @@
 import React from "react";
 import ProductList from "../components/ProductList/index.js";
-import ProductList2 from "../components/ProductList/ProductList.jsx";
 import CategoryMenu from "../components/CategoryMenu";
 // import Cart from "../components/Cart";
 
