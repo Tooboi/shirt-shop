@@ -42,14 +42,14 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <div className='flex flex-row justify-between px-4 py-2 border-t-2 border-primary-900 bg-primary-200/30'>
       {categories.map((item) => (
         <button
           key={item._id}
           onClick={() => {
             handleClick(item._id);
           }}
+          className='bg-primary-100/30 px-2 p-px rounded-md text-primary-900 border border-primary-900'
         >
           {item.name}
         </button>

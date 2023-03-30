@@ -2,14 +2,14 @@ import React from "react";
 import ProductList from "../components/ProductList/index.js";
 import ProductList2 from "../components/ProductList/ProductList.jsx";
 import CategoryMenu from "../components/CategoryMenu";
-import Cart from "../components/Cart";
+// import Cart from "../components/Cart";
 
 const Home = () => {
   return (
     <div>
       <CategoryMenu />
       <ProductList />
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 };
