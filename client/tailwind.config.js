@@ -19,6 +19,10 @@ module.exports = {
           900: '#2e1745',
         },
       },
+      height: {
+        '100': '28rem',
+        '128': '32rem',
+      }
     },
   },
   corePlugins: {
