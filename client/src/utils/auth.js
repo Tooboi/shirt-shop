@@ -11,6 +11,14 @@ class AuthService {
     return !!token && !this.isTokenExpired(token);
   }
 
+  admin() {
+    const token = this.getToken();
+    const email = this.getProfile().data.email;
+    const isAdmin = this.getProfile().data.admin;
+    const approvedEmails = ['japica123@gmail.com', 'tsilliman123@gmail.com'];
+    return !!token && !this.isTokenExpired(token) && approvedEmails.includes(email) && isAdmin;
+  }
+
   isTokenExpired(token) {
     try {
       const decoded = decode(token);

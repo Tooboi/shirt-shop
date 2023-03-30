@@ -26,7 +26,7 @@ const products = [
   // More products...
 ];
 
-export default function Example() {
+const Cart = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -120,3 +120,6 @@ export default function Example() {
     </Transition.Root>
   );
 }
+
+
+export default Cart

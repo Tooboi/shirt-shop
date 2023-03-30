@@ -18,6 +18,7 @@ db.once('open', async () => {
   const products = await Product.insertMany([
     {
       name: 'ppl tee',
+      size: 'M',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
       image: 'shirtF.jpg',
@@ -32,7 +33,7 @@ db.once('open', async () => {
       image: 'canned-coffee.jpg',
       category: categories[0]._id,
       price: 99,
-      quantity: 500
+      quantity: 50
     },
     {
       name: 'Toilet Paper',
