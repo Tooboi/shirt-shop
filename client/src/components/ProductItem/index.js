@@ -36,23 +36,28 @@ function ProductItem(item) {
   };
 
   return (
-    <div className="m-4 flex flex-col border-2 border-primary-900 overflow-hidden rounded-md shadow-sm bg-primary-200/30">
+    <div className="m-4 border-2 border-primary-900 overflow-hidden rounded-md shadow-sm bg-primary-200/30 ">
       <div className="min-h-80 aspect-w-1 aspect-h-1 w-full group-hover:opacity-75 lg:aspect-none lg:h-80 rounded-t-sm overflow-hidden">
         <Link to={`/products/${_id}`}>
           <img alt={name} src={`/images/${image}`} className="h-full w-full object-cover object-center lg:h-full lg:w-full border-b-2 border-primary-900" />
         </Link>
       </div>
-      <div className="flex flex-row divide-x-2 divide-primary-900 border-b-2 border-primary-900">
-        <p className="w-10/12 p-2 pb-3 text-xl font-semibold text-primary-100">{name}</p>
-        <p className="w-2/12 text-xl font-semibold text-primary-100 p-2 text-center">${price}</p>
+      <div className="flex flex-row border-b-2 border-primary-900 items-center">
+        <p className="w-9/12  p-2 pb-2 text-xl font-semibold text-primary-100 border-r-2 border-primary-900 line-clamp-1 leading-10">{name}</p>
+        <p className="w-3/12  text-xl font-semibold text-primary-100 p-2 text-center">${price}</p>
       </div>
-      <p className="p-2 text-primary-100/80">{description}</p>
-      <div className='flex flex-row justify-between '>
-        <p className="p-2 font-regular text-primary-100">
-          {quantity} in stock
-          {/* {pluralize('item', quantity)} */}
-        </p>
-        <button onClick={addToCart} className='p-2 font-medium text-primary-900 flex content-center bg-primary-100/30 rounded-tl-md border-t-2 border-l-2 border-primary-900'><PlusIcon className='h-6 mr-1' />Add to cart</button>
+      <div className='grid h-44 content-between'>
+        <p className="m-2 text-primary-100/80 font-light line-clamp-4">{description}</p>
+        <div className="flex flex-row justify-between">
+          <p className="p-2 font-regular text-primary-100">
+            {quantity} in stock
+            {/* {pluralize('item', quantity)} */}
+          </p>
+          <button onClick={addToCart} className="p-2 font-medium text-primary-900 flex bg-primary-100/30 hover:bg-teal-400 active:bg-orange-400 transition rounded-tl-md border-t-2 border-l-2 border-primary-900">
+            <PlusIcon className="h-6 mr-1" />
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   );
