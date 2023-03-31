@@ -51,7 +51,7 @@ function ProductItem(item) {
         <p className="m-2 text-primary-100/80 font-light line-clamp-4 select-none">{description}</p>
         <div className="flex flex-row justify-between">
         
-        {size && <div className="px-2 font-bold text-primary-100 select-none flex items-center">{size}</div>}
+        {size && <div className="px-2 font-bold text-primary-100 select-none flex items-center bg-primary-200/40 rounded-tr-md">{size}</div>}
           <p className="p-2 font-regular text-primary-100 select-none flex items-center">
             {quantity} in stock
             {/* {pluralize('item', quantity)} */}

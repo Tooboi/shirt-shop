@@ -98,32 +98,30 @@ const Cart = () => {
   //   </div>
   // );
   return (
-    <div></div>
-  )
-  //  return (
-  //    <div className="">
-  //      <h2>Shopping Cart</h2>
-  //      {state.cart.length ? (
-  //        <div>
-  //          {state.cart.map((item) => (
-  //            <CartItem key={item._id} item={item} />
-  //          ))
-  //          <div className="flex-row space-between">
-  //            <strong>Total: ${calculateTotal()}</strong
-  //            {/* Check to see if the user is logged in. If so render a button to check out */}
-  //            {Auth.loggedIn() ? <button onClick={submitCheckout}>Checkout</button> : <span>(log in to check out)</span>}
-  //          </div>
-  //        </div>
-  //      ) : (
-  //        <h3>
-  //          <span role="img" aria-label="shocked">
-  //            😱
-  //          </span>
-  //          You haven't added anything to your cart yet!
-  //        </h3>
-  //      )}
-  //    </div>
-  //  );
+    <div className='p-6 border-t-2 border-primary-900'>
+      {state.cart.length ? (
+        <div>
+          {state.cart.map((item) => (
+            <CartItem key={item._id} item={item} />
+          ))}
+          <div>
+          <p>Total: $ {calculateTotal()}</p>
+          {Auth.loggedIn() ? <div onClick={submitCheckout} className='bg-primary-100/40 hover:bg-orange-400 active:bg-teal-400 transition p-2 w-36 text-center rounded-md text-primary-900 border-2 border-primary-900 cursor-pointer'>Checkout</div> : <span>(log in to check out)</span>}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h3>
+            <span role="img" aria-label="shocked">
+              😱
+            </span>
+            You haven't added anything to your cart yet!
+          </h3>
+        </div>
+      )}
+    </div>
+  );
+
 };
 
 export default Cart;
