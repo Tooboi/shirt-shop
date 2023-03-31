@@ -47,7 +47,7 @@ function CategoryMenu() {
             onClick={() => {
               handleClick(item._id);
             }}
-            className="bg-primary-100/30 hover:bg-primary-100/50 active:bg-primary-100/40 transition px-2 p-px rounded-md text-primary-900 border border-primary-900"
+            className="bg-primary-100/30 hover:bg-teal-400 active:bg-orange-400 transition px-2 p-px rounded-md text-primary-900 border border-primary-900"
           >
             {item.name}
           </button>

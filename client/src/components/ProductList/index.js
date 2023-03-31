@@ -46,7 +46,7 @@ function ProductList() {
   return (
     <div className="border-t-2 border-primary-900">
       {state.products.length ? (
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto p-2">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
@@ -56,6 +56,7 @@ function ProductList() {
               price={product.price}
               quantity={product.quantity}
               description={product.description}
+              size={product.size}
             />
           ))}
         </div>

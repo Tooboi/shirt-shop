@@ -1,17 +1,13 @@
-import React from "react";
-import Jumbotron from "../components/Jumbotron";
+import React from 'react';
+import { CubeTransparentIcon } from '@heroicons/react/24/outline';
 
 const NoMatch = () => {
   return (
     <div>
-      <Jumbotron>
-        <h1>404 Page Not Found</h1>
-        <h1>
-          <span role="img" aria-label="Face With Rolling Eyes Emoji">
-            🙄
-          </span>
-        </h1>
-      </Jumbotron>
+      <div className="flex flex-col items-center justify-center py-24 border-t-2 border-primary-900">
+        <h1 className="pb-10 text-lg">404 Page Not Found</h1>
+        <CubeTransparentIcon className="h-24 w-24 text-primary-300" />
+      </div>
     </div>
   );
 };
