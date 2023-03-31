@@ -8,6 +8,8 @@ import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
 
+import { FaceFrownIcon } from "@heroicons/react/24/solid";
+
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -98,7 +100,7 @@ const Cart = () => {
   //   </div>
   // );
   return (
-    <div className='p-6 border-t-2 border-primary-900'>
+    <div className='p-6 border-t-2 border-primary-900 h-full'>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
@@ -110,13 +112,11 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <h3>
-            <span role="img" aria-label="shocked">
-              😱
-            </span>
-            You haven't added anything to your cart yet!
-          </h3>
+        <div className='flex items-center justify-center py-20'>
+          
+          <FaceFrownIcon className="h-8 w-8 text-primary-300" />
+          <p className='px-4 text-lg select-none'>nothing to see here - add something to your cart!</p> 
+          <FaceFrownIcon className="h-8 w-8 text-primary-300" />
         </div>
       )}
     </div>
