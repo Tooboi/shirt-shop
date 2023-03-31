@@ -13,7 +13,9 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Cart from './pages/Cart'
-import Admin from './pages/Admin'
+import Admin from './pages/Admin';
+import NewItem from './components/Admin/NewItem';
+import RemoveItem from './components/Admin/RemoveItem';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -49,6 +51,8 @@ function App() {
               <Route path="/orderHistory" element={<OrderHistory />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/admin/create" element={<NewItem />} />
+              <Route path="/admin/remove" element={<RemoveItem />} />
               <Route path="/products/:id" element={<Detail />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>

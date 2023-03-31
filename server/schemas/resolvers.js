@@ -115,6 +115,29 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    addProduct: async (parent, { postInfo }, context) => {
+      const { name, size, description, image, quantity, price, category } = postInfo;
+    
+      // Find or create the category
+      let foundCategory = await Category.findOne({ name: category });
+    
+      if (!foundCategory) {
+        foundCategory = await Category.create({ name: category });
+      }
+    
+      // Create the product with the found/created category
+      const product = await Product.create({
+        name,
+        size,
+        description,
+        image,
+        quantity,
+        price,
+        category: foundCategory._id
+      });
+    
+      return product;
+    },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
