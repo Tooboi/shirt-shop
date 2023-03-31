@@ -13,10 +13,14 @@ class AuthService {
 
   admin() {
     const token = this.getToken();
-    const email = this.getProfile().data.email;
-    const isAdmin = this.getProfile().data.admin;
-    const approvedEmails = ['japica123@gmail.com', 'tsilliman123@gmail.com'];
-    return !!token && !this.isTokenExpired(token) && approvedEmails.includes(email) && isAdmin;
+    if (!!token && !this.isTokenExpired(token)) {
+      const email = this.getProfile().data.email;
+      const isAdmin = this.getProfile().data.admin;
+      const approvedEmails = ['japica123@gmail.com', 'tsilliman123@gmail.com'];
+      return approvedEmails.includes(email) && isAdmin;
+    } else {
+      return false;
+    }
   }
 
   isTokenExpired(token) {
@@ -50,4 +54,5 @@ class AuthService {
   }
 }
 
-export default new AuthService();
+const authService = new AuthService();
+export default authService;
