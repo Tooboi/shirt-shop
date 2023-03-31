@@ -26,7 +26,7 @@ function Nav() {
             My Orders
           </Link>
           <Link to="/admin" className="flex bg-primary-100/40 hover:bg-orange-400 active:bg-teal-400 transition px-2 p-px rounded-md text-primary-900 border border-primary-900">
-            <IdentificationIcon class="h-6 w-6 text-primary-900" /><p className='pl-1'>{user.firstName}</p> 
+            <IdentificationIcon class="h-6 w-6 text-primary-900" /><p className='pl-2'>{user.firstName}</p> 
           </Link>
           <Link to="/cart" className="bg-primary-100/40 hover:bg-orange-400 active:bg-teal-400 transition px-2 p-px rounded-md text-primary-900 border border-primary-900">
             <ShoppingCartIcon class="h-6 w-6 text-primary-900" />
