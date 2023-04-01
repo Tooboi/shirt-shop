@@ -115,28 +115,31 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    addProduct: async (parent, { postInfo }, context) => {
-      const { name, size, description, image, quantity, price, category } = postInfo;
-    
-      // Find or create the category
-      let foundCategory = await Category.findOne({ name: category });
-    
-      if (!foundCategory) {
-        foundCategory = await Category.create({ name: category });
-      }
-    
-      // Create the product with the found/created category
-      const product = await Product.create({
+    addProduct: async (parent, { input }) => {
+      const { name, description, size, image, price, quantity, category } = input;
+
+      // // Check if the specified category exists
+      // const existingCategory = await Category.findById(category);
+      // if (!existingCategory) {
+      //   throw new Error(`Category with ID ${category} does not exist`);
+      // }
+
+      // Create a new Product object with the input data
+      const newProduct = new Product({
         name,
-        size,
         description,
+        size,
         image,
-        quantity,
         price,
-        category: foundCategory._id
+        quantity,
+        category: _id
       });
-    
-      return product;
+      
+      // Save the new product to the database
+      await newProduct.save();
+
+      // Return the newly created product
+      return newProduct;
     },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
