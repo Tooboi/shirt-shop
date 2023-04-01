@@ -54,3 +54,9 @@ export function idbPromise(storeName, method, object) {
     };
   });
 }
+export function clearIdbData() {
+  return idbPromise('categories', 'clear')
+    .then(() => idbPromise('products', 'clear'))
+    .then(() => console.log('IndexedDB data cleared successfully!'))
+    .catch((err) => console.error(err));
+}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { clearIdbData } from './utils/helpers';
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
@@ -12,7 +13,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import Cart from './pages/Cart'
+import Cart from './pages/Cart';
 import Admin from './pages/Admin';
 import NewItem from './components/Admin/NewItem';
 import RemoveItem from './components/Admin/RemoveItem';
@@ -37,6 +38,9 @@ const client = new ApolloClient({
 });
 
 function App() {
+  // useEffect(() => {
+  //   clearIdbData();
+  // }, []);
   return (
     <ApolloProvider client={client}>
       <Router>
