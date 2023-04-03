@@ -112,12 +112,16 @@ const Cart = () => {
           </div>
         </div>
       ) : (
+        <>
+        <div></div>
         <div className='flex items-center justify-center py-20'>
           
           <FaceFrownIcon className="h-8 w-8 text-primary-300" />
-          <p className='px-4 text-lg select-none'>nothing to see here - add something to your cart!</p> 
+          <p className='px-4 text-md sm:text-lg select-none text-center'>nothing to see here<br></br>add an item to your cart!</p> 
           <FaceFrownIcon className="h-8 w-8 text-primary-300" />
         </div>
+
+        </>
       )}
     </div>
   );
