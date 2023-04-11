@@ -53,7 +53,7 @@ const NewItem = () => {
       </div>
       <div>
         <label htmlFor="price">Price:</label>
-        <input type="number" id="price" name="price" min="0" step="0.01" value={formState.price} required onChange={(e) => setFormState({ ...formState, price: e.target.value })} />
+        <input type="number" id="price" name="price" min="0" step="0.1" value={formState.price} required onChange={(e) => setFormState({ ...formState, price: e.target.value })} />
       </div>
       <div>
         <label htmlFor="name">Size:</label>
